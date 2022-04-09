@@ -1,0 +1,4 @@
+Pedestrian
+Cyclist
+Car
+Truck
