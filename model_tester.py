@@ -1,10 +1,25 @@
-#Script to run trained model on set of images and saves its predictions
+
 '''
-args:
-	model_path: path to model file
-	val_img_folder: path to images folder
-	results_folder: folder where results should be stored
+==================================================================================================================================================================
+AUTHOR: Amardeep Sarang
+DESCRIPTION: Used to generate prediction labels with a model for a whole or several image datasets
+ARGS:
+    --mode <d,s,w> Can be run in several modes:
+        d: Is the default mode allows the user to manuly enter paths, if nothing is entered it will generate predictions for clear weather datasets, using clear weather model
+        s: Will generate predictions for all sythetic winter weather datasets, using clear weather model
+        w: Will generate predictions for clear weather, cadcd winter data, and mixed Auto snow data, using winter weather model
+
+
+    model_path: path to model file, default='clear_weather_model.pt'
+	val_img_folder: path to images folder, default = 'Data/clear_weather/images/val'
+	results_folder: folder where resulting labels should be stored, default ='Data/clear_weather/labels/detection'
+EXAMPLE USAGE:
+    python model_tester.py --mode d path/to/model path/to/images/val/folder path/to/detection/folder
+    python model_tester.py --mode s
+    python model_tester.py --mode w
+==================================================================================================================================================================
 '''
+
 #
 # myls.py
 # Import the argparse library

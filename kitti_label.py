@@ -1,5 +1,21 @@
-# code from https://github.com/oberger4711/kitti_for_yolo, then modified to keep truck, car, cyclist, ped lables
 
+'''
+==================================================================================================================================================================
+AUTHOR: code from https://github.com/oberger4711/kitti_for_yolo, then modified to keep truck, car, cyclist, ped lables
+DESCRIPTION: Used to convert KITTI object label into form YOLO expects the labels in the form: <object-class> <x> <y> <width> <height>
+                Also removes any object label not of the classes 'Pedestrian',Cyclist,'Car','Truck'.
+                Outputs numpy lists of file # to be split into testing and training data
+
+ARGS:
+    label_dir: Path to KITTI download folder for trainig lables in label_2 subfolder, example:  path/to/data_object_label_2/training/label_2 
+    image_2_dir: Path to KITTI download folder for trainig lables in label_2 subfolder, example: path/to/data_object_image_2/training/image_2 
+    --training-samples (float): Percentage of the samples to be used for training between 0.0 and 1.0, default=0.8
+    --use-dont-care (bool flag): Will not ignore 'DontCare' labels when set
+EXAMPLE USAGE:
+    python kitti_label.py path/to/kitti/data_object_label_2/training/label_2 path/to/kitti/data_object_image_2/training/image_2 --training-samples 0.7
+
+==================================================================================================================================================================
+'''
 from PIL import Image
 import argparse
 import os

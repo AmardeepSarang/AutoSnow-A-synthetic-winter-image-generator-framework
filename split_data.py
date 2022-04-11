@@ -1,9 +1,42 @@
+
+'''
+==================================================================================================================================================================
+AUTHOR: Amardeep Sarang
+DESCRIPTION: Used move KITTI dataset images and labels into training and testing sets. Splits data based on numpy lists created by kitti_label.py. Also creates the
+				Testing and training folders are created before files are moved, folders made according to YOLO requirement in following structure:
+				Data/
+				└── clear_weather/
+					├── images/
+					│   ├── train/
+					│   │   ├── img01.jpg
+					│   │   ├── img03.jpg
+					│   │   └── ...
+					│   └── val/
+					│       ├── img02.jpg
+					│       ├── img04.jpg
+					│       └── ..
+					└── labels/
+						├── train/
+						│   ├── lbl01.txt
+						│   └── lbl03.txt
+						└── val/
+							├── lbl02.txt
+							└── lbl04.txt
+
+
+ARGS (Hard coded):
+	Path to numpy list of training files (hard coded to 'kitti_train.txt.npy')
+	Path to numpy list of testing files (hard coded to 'kitti_test.txt.npy')
+
+==================================================================================================================================================================
+'''
+
 import os
 import csv
 import random
 import numpy as np
 
-WEATHER='clear_weather'
+WEATHER='clear_weather'#top level folder
 
 
 def create_folder(path):

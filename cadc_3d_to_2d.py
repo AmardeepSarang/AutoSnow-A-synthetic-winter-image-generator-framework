@@ -2,8 +2,17 @@
 #!/usr/bin/env python
 
 '''
-Modified script from https://github.com/mathild7/faster_rcnn_pytorch_multimodal/blob/master/tools/cadc_unpack_all_kitti.py
-#changes 3d annotations to 2d
+==================================================================================================================================================================
+AUTHOR: Script from https://github.com/mathild7/faster_rcnn_pytorch_multimodal/blob/master/tools/cadc_unpack_all_kitti.py, modified to only return 2d anotations
+DESCRIPTION: Used to changes in CADCD dataset 3d annotations to 2d, and also only keep condition with medium to extreme snowfall.
+                Also convert KITTI object label into form YOLO expects the labels in the form: <object-class> <x> <y> <width> <height>
+
+ARGS:
+    unpack: The path to the  download_data_dir in CADCD folder eg. /path/to/download_data_dir
+EXAMPLE USAGE:
+    python filename.py unpack /path/to/download_data_dir
+
+==================================================================================================================================================================
 '''
 import sys
 #print(sys.path)
