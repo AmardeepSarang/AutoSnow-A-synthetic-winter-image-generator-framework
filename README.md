@@ -26,13 +26,13 @@ Only a few samples immages of each dataset are included in this repo to keep in 
 ## How to use:
 
 ### Download and format the KITTI dataset
--	Download KITTI dataset from here
+-	Download KITTI dataset from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d)
 -	Use *kitti_label.py* to convert KITTI object label into form YOLO expects, as well as, generating lists of file # to be split into testing and training data. Run using command:
 ```python kitti_label.py path/to/kitti/data_object_label_2/training/label_2 path/to/kitti/data_object_image_2/training/image_2 --training-samples 0.71 ```
 -	Run *split_data.py* to split KITTI data from list previously generated and create testing and training folders as required by YOLO. Run using command ```python split_data.py```
 
 ### Download and format the CADCD dataset
--	Download CADCD dataset from here
+-	Download CADCD dataset from [here](http://cadcd.uwaterloo.ca/)
 -	Use *cadc_3d_to_2d.py* to convert 3D labels into 2D labels, as well as to the YOLO format.
 Run using command:  `python filename.py unpack /path/to/download_data_dir`
 -	No splitting required since this data is only used for testing.
